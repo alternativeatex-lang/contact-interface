@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alessandro — Contact Interface</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Alessandro</h1>
+
+  <p class="subtitle">
+    Embedded • IoT • Industrial Systems
+  </p>
+
+  <div class="section">
+    <p>
+      Sistemi embedded, integrazione hardware/software,
+      Linux embedded, IoT e automazione.
+    </p>
+  </div>
+
+  <div class="tags">
+    <span>STM32</span>
+    <span>ESP32</span>
+    <span>BLE</span>
+    <span>KNX</span>
+    <span>Linux Embedded</span>
+  </div>
+
+  <div class="section">
+    <p>
+      Se ritieni possa esserci un’intersezione interessante,
+      puoi lasciare un messaggio.
+    </p>
+  </div>
+
+  <form action="https://formspree.io/f/TUO_ID" method="POST">
+
+    <input type="text"
+           name="name"
+           placeholder="Nome (facoltativo)">
+
+    <input type="email"
+           name="email"
+           placeholder="Email (facoltativa)">
+
+    <textarea name="message"
+              placeholder="Messaggio"
+              required></textarea>
+
+    <label class="checkbox">
+      <input type="checkbox" required>
+      Desidero essere ricontattato
+    </label>
+
+    <button type="submit">
+      Invia
+    </button>
+
+  </form>
+
+  <footer>
+    Minimal contact interface — Lombardia
+  </footer>
+
+</div>
+
+</body>
+</html>
