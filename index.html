@@ -13,9 +13,7 @@
 
   <h1>Alessandro</h1>
 
-  <p class="subtitle">
-    Embedded • IoT • Industrial Systems
-  </p>
+  <h2 id="dynamicTitle"></h2>
 
   <div class="section">
     <p>
@@ -40,6 +38,8 @@
 
   <form action="https://formspree.io/f/xlgzovvz" method="POST">
 
+    <input type="hidden" id="source" name="source">
+    
     <input type="text"
            name="name"
            placeholder="Nome (facoltativo)">
@@ -68,6 +68,22 @@
   </footer>
 
 </div>
+  
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get('src') || 'generic';
+  document.getElementById('source').value = source;
 
+  const titles = {
+    ble: "BLE • Wireless Systems",
+    knx: "KNX • Building Automation",
+    iiot: "Industrial IoT • Automation",
+    recruiting: "Technical Profile"
+  };
+
+  document.getElementById("dynamicTitle").innerText = titles[source] || "Embedded Systems";
+
+</script>
+  
 </body>
 </html>
