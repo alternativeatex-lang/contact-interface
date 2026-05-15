@@ -36,11 +36,11 @@
     </p>
   </div>
 
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSc7OoTgiHAasLa1pzST48ZMhTeoUIYg8Tq1XlodxDKHy7TBqg/formResponse" method="POST target="hidden_iframe">
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSc7OoTgiHAasLa1pzST48ZMhTeoUIYg8Tq1XlodxDKHy7TBqg/formResponse" method="POST" target="hidden_iframe">
 
     <input type="hidden" id="source" name="source">
     
-    <input name="entry.173291699"
+    <input name="entry.1732916996"
        type="text"
        placeholder="Nome">
 
@@ -51,6 +51,10 @@
     <textarea name="entry.2024079344"
               placeholder="Messaggio"
               required></textarea>
+
+    <input type="hidden"
+           id="source"
+           name="entry.875365765">
     
     <label class="checkbox">
       <input type="checkbox" required>
@@ -76,7 +80,7 @@
   
 <script>
   const params = new URLSearchParams(window.location.search);
-  const source = params.get('source') || 'generic';
+  const source = params.get('src') || 'generic';
   document.getElementById('source').value = source;
 
   const titles = {
