@@ -82,12 +82,12 @@
 </div>
   
 <script>
-  document.getElementById("debug").innerText =
-  "SOURCE = " + source;
-  
+    
   const params = new URLSearchParams(window.location.search);
   const source = params.get('src') || 'generic';
   document.getElementById('source').value = source;
+
+  document.getElementById("debug").innerText = "SOURCE = " + source;
 
   const titles = {
     ble: "BLE • Wireless Systems",
@@ -97,7 +97,7 @@
   };
 
   document.getElementById("dynamicTitle").innerText = titles[source] || "Embedded Systems";
-
+  
   const form = document.getElementById("contactForm");
   form.addEventListener("submit", () => {
   setTimeout(() => {
