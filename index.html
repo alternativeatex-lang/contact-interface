@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alessandro — Contact Interface</title>
+  <p id="debug"></p>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -36,7 +37,11 @@
     </p>
   </div>
 
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSc7OoTgiHAasLa1pzST48ZMhTeoUIYg8Tq1XlodxDKHy7TBqg/formResponse" method="POST" target="hidden_iframe">
+<p id="successMessage" style="display:none;">
+  Messaggio inviato.
+</p>
+  
+  <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSc7OoTgiHAasLa1pzST48ZMhTeoUIYg8Tq1XlodxDKHy7TBqg/formResponse" method="POST" target="hidden_iframe">
 
     <input type="hidden"
            id="source"
@@ -77,6 +82,9 @@
 </div>
   
 <script>
+  document.getElementById("debug").innerText =
+  "SOURCE = " + source;
+  
   const params = new URLSearchParams(window.location.search);
   const source = params.get('src') || 'generic';
   document.getElementById('source').value = source;
@@ -89,6 +97,14 @@
   };
 
   document.getElementById("dynamicTitle").innerText = titles[source] || "Embedded Systems";
+
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", () => {
+  setTimeout(() => {
+    form.style.display = "none";
+    document.getElementById("successMessage").style.display = "block";
+  }, 500);
+});
 
 </script>
   
